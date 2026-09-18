@@ -1,0 +1,13 @@
+{
+  "description": "Showcase your company's projects, services, and achievements in a professional portfolio to attract clients and build brand credibility.",
+  "icons": {
+    "icon": "/Assets/logo/logo.png"
+  },
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #CE307D #0a0a0a;
+  overflow-x: hidden;
+  width: 100%;
+}
+html::-webkit-scrollbar { width: 4px; }
+html::-webkit-scrollbar-track { background: #0a0a0a; }
+html::-webkit-scrollbar-thumb { background: #CE307D; }
+
+body {
+  background: #0a0a0a;
+  color: #f0ede8;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+::selection { background: rgba(206,48,125,0.35); color: #fff; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+@media (max-width: 1024px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: flex !important; }
+}
+@media (min-width: 1025px) {
+  .show-mobile { display: none !important; }
+}
+
+@media (max-width: 480px) {
+  html, body { font-size: 15px; }
+}
