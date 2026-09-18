@@ -242,7 +242,7 @@ export default function App() {
     if (testimonialPaused) return
     const interval = setInterval(() => {
       setActiveTestimonial(prev => (prev + 1) % clientVoices.length)
-    }, 3000)
+    }, 12000)
     return () => clearInterval(interval)
   }, [testimonialPaused, clientVoices.length])
 
@@ -618,7 +618,7 @@ export default function App() {
             >
               <div style={{
                 display: 'flex', flexDirection: 'column', gap: '1px',
-                animation: testimonialPaused ? 'none' : 'scrollUp 30s linear infinite',
+                animation: testimonialPaused ? 'none' : 'scrollUp 60s linear infinite',
               }}>
                 {[...clientVoices, ...clientVoices].map((t, i) => (
                   <motion.div key={i}
@@ -933,7 +933,7 @@ function ClientLogoCard({ client }: { client: typeof CLIENT_LOGOS[0] }) {
     >
       <motion.div
         initial={{ scaleX: 0 }} animate={{ scaleX: hovered ? 1 : 0 }} transition={{ duration: 0.3 }}
-        style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: '#CE307D', transformOrigin: 'left' }}
+        style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: '#CE307D', transformOrigin: 'left' }}
       />
       <img src={client.img} alt={client.name} style={{ maxWidth: '150px', maxHeight: '60px', width: '100%', objectFit: 'contain' }} />
       <span style={{ fontSize: '0.68rem', letterSpacing: '0.03em', color: '#666', textAlign: 'center', lineHeight: 1.3 }}>{client.name}</span>
