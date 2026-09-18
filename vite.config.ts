@@ -15,6 +15,11 @@ export default defineConfig(({ mode }) => {
     build: {
       sourcemap: emitSourcemaps ? 'inline' : false,
       minify: !emitSourcemaps,
+      // Vite's default output dir "assets" collides case-insensitively with the
+      // public/Assets folder on Windows builds, merging the JS/CSS bundle into it
+      // while index.html still links lowercase "assets" — a 404 on case-sensitive
+      // hosts like GitHub Pages. A distinct name avoids the collision entirely.
+      assetsDir: 'app',
     },
     plugins: [
       react(),
